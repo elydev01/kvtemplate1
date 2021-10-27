@@ -11,5 +11,3 @@ Installation of dependencies
 Starting the application
 
 `python main.py -m screen:droid2,portrait,scale=.7`
-
-```
