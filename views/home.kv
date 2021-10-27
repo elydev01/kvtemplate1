@@ -1,0 +1,122 @@
+
+<Toolbar@MDBoxLayout>:
+    size_hint_y: None
+    height: app.theme_cls.standard_increment
+    padding: [app.theme_cls.horizontal_margins - dp(12), 0]
+    MDIconButton:
+        id: back_btn
+        icon: "menu"
+        theme_text_color: "Custom"
+        text_color: 0,0,.5,1
+        pos_hint: {"center_y": .5}
+    MDBoxLayout:
+    MDIconButton:
+        icon: "assets/icon.png"
+        pos_hint: {"center_y": .5}
+    MDBoxLayout:
+    MDIconButton:
+        icon: "magnify"
+        theme_text_color: "Custom"
+        text_color: 0,0,.5,1
+        pos_hint: {"center_y": .5}
+
+
+<HomeMainScreen>:
+    utils_height: (app.theme_cls.standard_increment + dp(20) + dp(self.width * .2))
+    MDBoxLayout:
+        orientation: 'vertical'
+        md_bg_color: C('#FFFFFF')
+        canvas:
+            Color:
+                rgb: C('#FFEEFF')
+            RoundedRectangle:
+                size: self.size[0], (root.utils_height if root.utils_height else 0)
+                pos: self.x, self.top - (root.utils_height if root.utils_height else 0)
+                radius: [0,0, dp(20), dp(20)]
+        Toolbar:
+            pos_hint: {"top": 1}
+        ScrollView:
+            MDBoxLayout:
+                adaptive_height: True
+                orientation: 'vertical'
+                spacing: dp(40)
+                padding: 0, dp(20)
+                MDBoxLayout:
+                    size_hint: .8, None
+                    height: dp(self.width * .4)
+                    pos_hint: {'center_x': .48}
+                    md_bg_color: C("#FFCCFF")
+                    radius: [dp(40),0,dp(40),0]
+                    canvas:
+                        Color:
+                            rgba: C('#FFCCFF')
+                        RoundedRectangle:
+                            size: self.size[0], self.size[1]
+                            pos: self.x + (self.width * .05), self.y - (self.width * .05)
+                            radius: [dp(40),0,dp(40),0]
+                    FitImage:
+                        source: "assets/photo.jpg"
+                        image_ratio: True
+                        allow_stretch: True
+                        radius: [dp(40),0,0,0]
+                    MDBoxLayout:
+                        padding: dp(15), dp(15)
+                        radius: [0,0,dp(40),0]
+                        orientation: 'vertical'
+                        md_bg_color: 1,1,1,1
+                        MDLabel:
+                            text: "FACE"
+                            bold: True
+                            font_size: sp((self.width // 10))
+                            color: C("#FF88FF")
+                            size_hint_y: .6
+                        MDLabel:
+                            text: "[i]Organic[/i] \nFace Mask"
+                            font_size: sp((self.width // 5.5))
+                            markup: True
+                            color: 0,0,.5,1
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    size_hint_x: .85
+                    adaptive_height: True
+                    pos_hint: {'center_x': .5}
+                    md_bg_color: C("#FFDDFF")
+                    radius: [dp(20)]
+                    padding: dp(15), dp(45)
+                    spacing: dp(30)
+                    FitImage:
+                        source: 'assets/girl.jpg'
+                        size_hint: None, None
+                        size: dp(60), dp(60)
+                        radius: [dp(50)]
+                        pos_hint: {'center_x': .5}
+                    MDLabel:
+                        text: 'Laura Ritterman'
+                        font_size: sp(18)
+                        halign: 'center'
+                        font_name: 'assets/WigendaTypewrite.ttf'
+                        color: 0,0,.3
+                        adaptive_height: True
+                    MDLabel:
+                        text:
+                            'Hello! Join me for fresh meais, tips about food \
+                            photography and cooking with friends.'
+                        halign: 'center'
+                        color: 0,0,.3
+                        font_size: sp(12)
+                        line_height: sp(1.4)
+                        adaptive_height: True
+                    Image:
+                        source: 'assets/signature.png'
+                        size_hint: None, None
+                        size: dp(100), dp(30)
+                        pos_hint: {'center_x': .5}
+                        canvas:
+                            Clear
+                            Color:
+                                rgb:C('#FFEEFF')
+                            RoundedRectangle:
+                                size: self.size[0], self.size[1]
+                                pos: self.pos
+                                radius: [dp(10)]
+                                texture: self.texture
