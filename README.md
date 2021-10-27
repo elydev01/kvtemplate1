@@ -1,5 +1,5 @@
 # kvtemplate1
-Mobile application interface with Kivy and KivyMD
+Mobile application interface 1 with Kivy and KivyMD
 
 ![](assets/screen.png)
 
